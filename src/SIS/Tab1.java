@@ -93,7 +93,31 @@ public class Tab1 {
 
         si.add(inputP);
 
+        // Left panel
         JPanel leftPanel = new JPanel(null);
+        leftPanel.setBorder(new LineBorder(Temps.white,4,true));
+        leftPanel.setOpaque(false);
+        leftPanel.setBounds(340,10,920,100);
+        // Left lable
+
+        JLabel leftL = new JLabel("Enter ID", JLabel.CENTER);
+        leftL.setFont(new Font("Comic Sans MS",1,15));
+        leftL.setForeground(Temps.white);
+        leftL.setBorder(new LineBorder(Temps.white,2,true));
+        leftL.setBounds(11,5,900,40);
+        leftPanel.add(leftL);
+        // ID label
+        JLabel idL = new JLabel("ID");
+        idL.setBorder(new LineBorder(Temps.white,1,true));
+        idL.setOpaque(true);
+        idL.setBounds(10,60,110,20);
+        leftPanel.add(idL);
+
+        JTextField idT = new JTextField("");
+        idT.setBounds(10,60,110,20);
+        leftPanel.add(idT);
+
+        si.add(leftPanel);
         return si;
     }
 }
