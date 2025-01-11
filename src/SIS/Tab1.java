@@ -5,6 +5,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class Tab1 {
@@ -114,10 +115,51 @@ public class Tab1 {
         leftPanel.add(idL);
 
         JTextField idT = new JTextField("");
-        idT.setBounds(10,60,110,20);
+        idT.setBounds(170,60,110,20);
         leftPanel.add(idT);
 
         si.add(leftPanel);
+
+        JPanel tablePanel = new JPanel(null);
+        tablePanel.setBounds(340,120,930,240);
+
+        // Table
+        JTable table = new JTable();
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("ID");
+        tableModel.addColumn("Father Name");
+        tableModel.addColumn("DOB");
+        tableModel.addColumn("Class");
+        tableModel.addColumn("Mobile Number");
+
+        table.setModel(tableModel);
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.setViewportView(table);
+        scrollPane.setBounds(0,0,930,240);
+        tablePanel.add(scrollPane);
+
+        si.add(tablePanel);
+
+        // Buttons
+        JButton addButton = new JButton("Add Info");
+        addButton.setBounds(40,440,110,30);
+        si.add(addButton);
+
+        JButton updateButton = new JButton("Update");
+        updateButton.setBounds(330,440,110,30);
+        si.add(updateButton);
+
+        JButton searchButton = new JButton("Search");
+        searchButton.setBounds(630,440,110,30);
+        si.add(searchButton);
+
+        JButton deleteButton = new JButton("Delete");
+        deleteButton.setBounds(880,440,110,30);
+        si.add(deleteButton);
+
+        JButton exitButton = new JButton("Exit");
+        exitButton.setBounds(1150,440,110,30);
+        si.add(exitButton);
         return si;
     }
 }
