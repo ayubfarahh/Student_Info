@@ -7,6 +7,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Tab1 {
     public static JPanel createTab(){
@@ -160,6 +162,50 @@ public class Tab1 {
         JButton exitButton = new JButton("Exit");
         exitButton.setBounds(1150,440,110,30);
         si.add(exitButton);
+
+        // Actionlister to buttons
+
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //
+            }
+        });
+
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //
+            }
+        });
+
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //
+            }
+        });
+
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //
+            }
+        });
+
+        //Background
+
+        JLabel background = new JLabel();
+        background.setIcon(new ImageIcon("C:/Users/ayubf/IdeaProjects/Student/src/SIS/img21.jpg"));
+        si.add(background);
+        background.setBounds(0,0,1280,540);
         return si;
     }
 }
