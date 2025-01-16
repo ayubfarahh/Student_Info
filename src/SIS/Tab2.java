@@ -7,6 +7,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Tab2 {
     public static JPanel createTab(){
@@ -16,7 +18,7 @@ public class Tab2 {
 
         JPanel inputP2 = new JPanel(null);
         inputP2.setBorder(new LineBorder(Temps.white,4,true));
-        inputP2.setBounds(10,10,320,350);
+        inputP2.setBounds(10,10,320,250);
         inputP2.setOpaque(false);
 
         // Label details and text
@@ -156,9 +158,52 @@ public class Tab2 {
         scrollPane.setBounds(0,0,920,220);
         tablePanel.add(scrollPane);
 
+        // Buttons
 
+        JButton searchButton = new JButton("Search");
+        searchButton.setBounds(60,440,170,30);
+        fi.add(searchButton);
+
+        JButton updateButton = new JButton("Update");
+        updateButton.setBounds(60,380,170,30);
+        fi.add(updateButton);
+
+        JButton exitButton = new JButton("Exit");
+        exitButton.setBounds(60,320,170,30);
+        fi.add(exitButton);
+
+        // Action listeners to buttons
+
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //
+            }
+        });
+
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        fi.add(tablePanel);
         fi.add(detailsP);
         fi.add(inputP2);
+
+        // Background
+
+        JLabel background = new JLabel();
+        background.setIcon(new ImageIcon("C:/Users/ayubf/IdeaProjects/Student/src/SIS/img21.jpg"));
+        fi.add(background);
+        background.setBounds(0,0,1280,540);
         return fi;
     }
 }

@@ -175,28 +175,31 @@ public class Tab1 {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //
+                Insert.insert(nameT, fatherT, motherT, dobT, classT, mobileT, tableModel);
+
+                DB.loadTableData1(tableModel);
             }
         });
+
 
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //
+                SearchRecord.searchRecord(nameT, fatherT, motherT, dobT, classT, mobileT, idT, tableModel);
             }
         });
 
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //
+                Update.update(nameT, fatherT, motherT, dobT, classT, mobileT, idT, tableModel);
             }
         });
 
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //
+                Delete.delete(nameT, fatherT, motherT, dobT, classT, mobileT, idT, tableModel);
             }
         });
 
